@@ -34,6 +34,13 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 import javax.swing.text.AbstractDocument;
 import java.util.*;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import org.python.*;
+import org.python.core.PyString;
+import org.python.core.PySystemState;
+import org.python.util.*;
+import otros.Py;
 
 /**
  *
@@ -47,11 +54,16 @@ public class Ventana extends javax.swing.JFrame {
     FileOutputStream salida;
     
     //Variables Globales
-    //static String direccionDanielAuto="C:\\Users\\alexi\\OneDrive\\Escritorio\\uni\\compiladores\\entrega5\\Corvex\\python\\automata.py";
-    static String direccionDanielAuto="C:\\Users\\bukch\\Desktop\\univrsidad\\compilador\\Corvex\\python\\automata.py";
-    //static String direccionDanielError="C:\\Users\\alexi\\OneDrive\\Escritorio\\uni\\compiladores\\entrega5\\Corvex\\error.txt";
-    static String direccionDanielError="C:\\Users\\bukch\\Desktop\\univrsidad\\compilador\\Corvex\\error.txt";
-
+    /*static String direccionDanielLex="C:\\Users\\nihil\\OneDrive\\Escritorio\\Compiladores 1\\Final\\Tercera Part\\Corvex\\python\\automata.py";
+    static String direccionAlexisLex="C:\\Users\\bukch\\Desktop\\univrsidad\\compilador\\Entrega_3er_parcial\\Corvex\\python\\automata.py";
+    static String direccionDanielError="C:\\Users\\nihil\\OneDrive\\Escritorio\\Compiladores 1\\Final\\Tercera Part\\Corvex\\error.txt";
+    static String direccionAlexisError="C:\\Users\\bukch\\Desktop\\univrsidad\\compilador\\Entrega_3er_parcial\\Corvex\\error.txt";
+    static String direccionDanielSint="C:\\Users\\nihil\\OneDrive\\Escritorio\\Compiladores 1\\Final\\Tercera Part\\Corvex\\python\\sintactico.py";
+    static String direccionAlexisSint="C:\\Users\\bukch\\Desktop\\univrsidad\\compilador\\Entrega_3er_parcial\\Corvex\\python\\anaSint.py";
+    static String dirTemp="C:\\Users\\bukch\\Desktop\\univrsidad\\compilador\\Entrega_3er_parcial\\Corvex\\python\\anaLex.py";; old*/
+    //static String dirTemp2="C:\\Users\\julio\\Desktop\\Corvex\\error.txt";
+    public String ruta="";
+    String rutaActual=System.getProperty("user.dir");
     /**
      * Creates new form Ventana
      */
@@ -117,8 +129,8 @@ public class Ventana extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextAreaLexico = new javax.swing.JTextArea();
         jPanelSintactico = new javax.swing.JPanel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTextAreaSintactoco = new javax.swing.JTextArea();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        jTextAreaSintactico = new javax.swing.JTextArea();
         jPanelSemantico = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTextAreaSemantico = new javax.swing.JTextArea();
@@ -177,23 +189,23 @@ public class Ventana extends javax.swing.JFrame {
 
         jTabbedPaneTypes.addTab("Léxico", jPanelLexico);
 
-        jTextAreaSintactoco.setEditable(false);
-        jTextAreaSintactoco.setBackground(new java.awt.Color(150, 150, 150));
-        jTextAreaSintactoco.setColumns(20);
-        jTextAreaSintactoco.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
-        jTextAreaSintactoco.setForeground(new java.awt.Color(0, 51, 51));
-        jTextAreaSintactoco.setRows(5);
-        jScrollPane3.setViewportView(jTextAreaSintactoco);
+        jTextAreaSintactico.setEditable(false);
+        jTextAreaSintactico.setBackground(new java.awt.Color(150, 150, 150));
+        jTextAreaSintactico.setColumns(20);
+        jTextAreaSintactico.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
+        jTextAreaSintactico.setForeground(new java.awt.Color(51, 0, 0));
+        jTextAreaSintactico.setRows(5);
+        jScrollPane8.setViewportView(jTextAreaSintactico);
 
         javax.swing.GroupLayout jPanelSintacticoLayout = new javax.swing.GroupLayout(jPanelSintactico);
         jPanelSintactico.setLayout(jPanelSintacticoLayout);
         jPanelSintacticoLayout.setHorizontalGroup(
             jPanelSintacticoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 515, Short.MAX_VALUE)
+            .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 520, Short.MAX_VALUE)
         );
         jPanelSintacticoLayout.setVerticalGroup(
             jPanelSintacticoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 442, Short.MAX_VALUE)
+            .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 439, Short.MAX_VALUE)
         );
 
         jTabbedPaneTypes.addTab("Sintáctico", jPanelSintactico);
@@ -245,7 +257,7 @@ public class Ventana extends javax.swing.JFrame {
         jTextAreaErrores.setEditable(false);
         jTextAreaErrores.setBackground(new java.awt.Color(150, 150, 150));
         jTextAreaErrores.setColumns(20);
-        jTextAreaErrores.setFont(new java.awt.Font("Myanmar Text", 1, 24)); // NOI18N
+        jTextAreaErrores.setFont(new java.awt.Font("Myanmar Text", 1, 14)); // NOI18N
         jTextAreaErrores.setForeground(new java.awt.Color(153, 0, 0));
         jTextAreaErrores.setRows(5);
         jScrollPane6.setViewportView(jTextAreaErrores);
@@ -394,34 +406,100 @@ public class Ventana extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jMenuItemGuardarActionPerformed
 
-    private void jMenuItemCompActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCompActionPerformed
-        // TODO add your handling code here:
-        jTextAreaErrores.setText("");
-        System.out.println("Si compila");
-        PythonInterpreter automata = new PythonInterpreter();
-        String[] args = jTextPaneCodigo.getText().split("\r?\n");
-        String Args = "[";
-        for (int i = 0; i < args.length; i++) {
-            Args += "'" + args[i] + "'";
-            if (!(i == (args.length - 1))) {
-                Args += ",";
+    private void lexico(){
+        PySystemState estado=new PySystemState();
+        estado.argv.append(new PyString(ruta));
+        PythonInterpreter interprete=new PythonInterpreter(null,estado);
+        interprete.execfile(rutaActual+"\\AutomataLexico.py");
+        jTextAreaLexico.setText("");
+        BufferedReader entrada=null;
+        try{
+           entrada=new BufferedReader(new FileReader(rutaActual+"\\tokens_lexico.txt"));
+           String cadena;
+           while((cadena=entrada.readLine())!=null){
+               jTextAreaLexico.append(cadena+'\n');
+           }
+        }catch(IOException e){  
+        }finally{
+            try{
+                entrada.close();
+            }catch(Exception el){
+                System.out.println("Ha habido un error. Favor de verificar");
             }
         }
-        Args += "]";
-        ByteArrayOutputStream out = new ByteArrayOutputStream();
-        PrintStream imp = new PrintStream(out);
-        automata.setOut(imp);
-        automata.exec("import sys\n" + "sys.argv=" + Args);
-        automata.execfile(direccionDanielAuto);
-        //automata.execfile(direccionAlexisAuto);
-        String output = out.toString();
-        jTextAreaLexico.setText(output);
-        try {
-            abrirContenido(direccionDanielError);
-            //abrirContenido(direccionAlexisError);
-        } catch (IOException ex) {
-            Logger.getLogger(JFrame.class.getName()).log(Level.SEVERE, null, ex);
+        //Errores
+        jTextAreaErrores.setText("Errores Lexicos: \n");
+        try{
+            entrada=new BufferedReader(new FileReader(rutaActual+"\\error_lexico.txt"));
+            String variable;
+            while((variable=entrada.readLine())!=null){
+                jTextAreaErrores.append("\t"+variable+'\n'); 
+            }
+        }catch(IOException e){
+        }finally{
+            try{
+                entrada.close();
+            }catch(Exception el){
+                System.out.println("Ha habido un error. Revise su código");
+            }
         }
+        this.sintactico();
+    }
+    private void sintactico() {
+       String rutaActual=System.getProperty("user.dir");
+       Path rutaNueva=Paths.get(rutaActual);
+       Path sintacticoScript=Paths.get(rutaNueva.toString()).resolve("parserSintactico.py");
+       
+       try{
+           String SP=Py.ejecutarPython(sintacticoScript.toString());
+           this.jTextAreaSintactico.setText(SP);    
+       }catch(IOException e){
+           e.printStackTrace();
+       }
+       
+       //Open AS
+       jTextAreaSintactico.setText("");
+       BufferedReader entrada=null;
+       try{
+          entrada=new BufferedReader(new FileReader(rutaActual+"\\arbol_sintactico.txt"));
+          String cadena;
+          while((cadena=entrada.readLine())!=null){
+              jTextAreaSintactico.append(cadena+'\n');
+          }
+       }catch(IOException e){
+           
+       }finally{
+           try{
+               entrada.close();
+           }catch(Exception el){
+               System.out.println("Ha habido un error en su sintaxis. favor verificar");
+           }
+       }
+       
+       //Errores Sintacticos
+       try{
+           jTextAreaErrores.append("\nErrores Sintácticos: "+'\n');
+           entrada=new BufferedReader(new FileReader(rutaActual+"\\errore_sintactico.txt"));
+           String cadena;
+           while((cadena=entrada.readLine())!=null){
+               jTextAreaErrores.append("\t"+cadena+'\n');
+           }
+       }catch (IOException e){
+           
+       }finally{
+           try{
+               entrada.close();
+           }catch(Exception el){
+               System.out.println("Ya se me acabaron las expeciones. Imagine la excepcion que quiera");
+           }
+       }
+               
+    }
+    
+    
+    private void jMenuItemCompActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCompActionPerformed
+          lexico();
+          sintactico();
     }//GEN-LAST:event_jMenuItemCompActionPerformed
     //Funciones varias
     private void pintarColores() {
@@ -561,28 +639,6 @@ public class Ventana extends javax.swing.JFrame {
             if (!getTitle().contains("*")) {
                 setTitle(getTitle() + "*");
             }
-            //if (ev.getKeyCode() == KeyEvent.VK_ENTER) {
-           /* System.out.println("Has entrado al key event");
-            PythonInterpreter automata = new PythonInterpreter();
-            String[] args = jTextPaneCodigo.getText().split("\r?\n");
-            String Args = "[";
-            for (int i = 0; i < args.length; i++) {
-                Args += "'" + args[i] + "'";
-                if (!(i == (args.length - 1))) {
-                    Args += ",";
-                }
-            }
-            Args += "]";
-            ByteArrayOutputStream out = new ByteArrayOutputStream();
-            PrintStream imp = new PrintStream(out);
-            automata.setOut(imp);
-            automata.exec("import sys\n" + "sys.argv=" + Args);
-            automata.execfile("C:\\Users\\bukch\\Desktop\\univrsidad\\compilador\\Corvex\\python\\automata.py");
-            String output = out.toString();
-            jTextAreaLexico.setText(output);
-            abrirContenido("C:\\Users\\bukch\\Desktop\\univrsidad\\compilador\\Corvex\\error.txt");
-
-            //}*/
         }
     }//Fin touchdown
 
@@ -594,7 +650,7 @@ public class Ventana extends javax.swing.JFrame {
             while ((cadena = br.readLine()) != null) {
                 System.out.println("Se ha entrado a abrir el contenido");
                 System.out.println(cadena);
-                jTextAreaErrores.append(cadena + "\n");
+                jTextAreaErrores.append(cadena + '\n');
                 contenido.append(cadena).append("\n");
             }
         }
@@ -665,11 +721,11 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelSintactico;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JTabbedPane jTabbedPaneResultados;
     private javax.swing.JTabbedPane jTabbedPaneTypes;
     private javax.swing.JTextArea jTextAreaCI;
@@ -677,7 +733,9 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextAreaLexico;
     private javax.swing.JTextArea jTextAreaResultados;
     private javax.swing.JTextArea jTextAreaSemantico;
-    private javax.swing.JTextArea jTextAreaSintactoco;
+    private javax.swing.JTextArea jTextAreaSintactico;
     private javax.swing.JTextPane jTextPaneCodigo;
     // End of variables declaration//GEN-END:variables
+
+
 }
