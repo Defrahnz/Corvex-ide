@@ -32,10 +32,17 @@ import java.awt.Toolkit;
 import javax.swing.JFileChooser;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.ClipboardOwner;
+import java.awt.datatransfer.DataFlavor;
+import java.awt.datatransfer.StringSelection;
+import java.awt.datatransfer.Transferable;
+import java.awt.datatransfer.UnsupportedFlavorException;
 import javax.swing.text.AbstractDocument;
 import java.util.*;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.concurrent.ConcurrentHashMap;
 import org.python.*;
 import org.python.core.PyString;
 import org.python.core.PySystemState;
@@ -46,7 +53,7 @@ import otros.Py;
  *
  * @author nihil
  */
-public class Ventana extends javax.swing.JFrame {
+public class Ventana extends javax.swing.JFrame implements ClipboardOwner{
     NumeroLinea numerolinea;
     JFileChooser seleccionar = new JFileChooser();
     File archivo;
@@ -71,7 +78,7 @@ public class Ventana extends javax.swing.JFrame {
         initComponents();
         inicializar();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setTitle("CORVEX IDE v1.5");
+        setTitle("CORVEX IDE v2.0");
         pintarColores();
 
     }
@@ -150,11 +157,18 @@ public class Ventana extends javax.swing.JFrame {
         jMenuItemGuardar = new javax.swing.JMenuItem();
         jMenuItemSalir = new javax.swing.JMenuItem();
         jMenuEditar = new javax.swing.JMenu();
+        jMenuItemCopiar = new javax.swing.JMenuItem();
+        jMenuItemPegar = new javax.swing.JMenuItem();
+        jMenuItemCortar = new javax.swing.JMenuItem();
+        jMenuItemDeshacer = new javax.swing.JMenuItem();
+        jMenuItemRehacer = new javax.swing.JMenuItem();
         jMenuFormato = new javax.swing.JMenu();
         jMenuCompilar = new javax.swing.JMenu();
         jMenuItemComp = new javax.swing.JMenuItem();
         jMenuItemDebug = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        jMenuItemAcerca = new javax.swing.JMenuItem();
+        jMenuItemNosotros = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -329,6 +343,52 @@ public class Ventana extends javax.swing.JFrame {
         jMenuBar1.add(jMenuArchivo);
 
         jMenuEditar.setText("Editar");
+
+        jMenuItemCopiar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItemCopiar.setText("Copiar");
+        jMenuItemCopiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemCopiarActionPerformed(evt);
+            }
+        });
+        jMenuEditar.add(jMenuItemCopiar);
+
+        jMenuItemPegar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItemPegar.setText("Pegar");
+        jMenuItemPegar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemPegarActionPerformed(evt);
+            }
+        });
+        jMenuEditar.add(jMenuItemPegar);
+
+        jMenuItemCortar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_X, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItemCortar.setText("Cortar");
+        jMenuItemCortar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemCortarActionPerformed(evt);
+            }
+        });
+        jMenuEditar.add(jMenuItemCortar);
+
+        jMenuItemDeshacer.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Z, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItemDeshacer.setText("Deshacer");
+        jMenuItemDeshacer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemDeshacerActionPerformed(evt);
+            }
+        });
+        jMenuEditar.add(jMenuItemDeshacer);
+
+        jMenuItemRehacer.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Y, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItemRehacer.setText("Rehacer");
+        jMenuItemRehacer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemRehacerActionPerformed(evt);
+            }
+        });
+        jMenuEditar.add(jMenuItemRehacer);
+
         jMenuBar1.add(jMenuEditar);
 
         jMenuFormato.setText("Formato");
@@ -345,11 +405,33 @@ public class Ventana extends javax.swing.JFrame {
         jMenuCompilar.add(jMenuItemComp);
 
         jMenuItemDebug.setText("Debug");
+        jMenuItemDebug.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemDebugActionPerformed(evt);
+            }
+        });
         jMenuCompilar.add(jMenuItemDebug);
 
         jMenuBar1.add(jMenuCompilar);
 
         jMenu2.setText("Ayuda");
+
+        jMenuItemAcerca.setText("Acerca de...");
+        jMenuItemAcerca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemAcercaActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItemAcerca);
+
+        jMenuItemNosotros.setText("Nosotros...");
+        jMenuItemNosotros.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemNosotrosActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItemNosotros);
+
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
@@ -368,6 +450,35 @@ public class Ventana extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Todo lo de clipboard
+    public void setClipboard(String texto){
+        StringSelection txt=new StringSelection(texto);
+        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(txt, this);
+    }
+    @Override
+    public void lostOwnership(Clipboard clipboard, Transferable contents) {
+        
+    }
+    
+    public String pegar(){
+        String res="";
+        Clipboard cb=Toolkit.getDefaultToolkit().getSystemClipboard();
+        Transferable content=cb.getContents(null);
+        if(content.isDataFlavorSupported(DataFlavor.stringFlavor)){
+            try {
+                res=(String)content.getTransferData(DataFlavor.stringFlavor);
+            } catch (UnsupportedFlavorException ex) {
+                JOptionPane.showMessageDialog(null,ex.getMessage());
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(null,ex.getMessage());
+            }
+        }
+        return res;
+    }
+    
+    
+    
+    //Termina todo lo de clipboard
     private void jMenuItemSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSalirActionPerformed
         // TODO add your handling code here:
         dispose();
@@ -501,6 +612,48 @@ public class Ventana extends javax.swing.JFrame {
           lexico();
           sintactico();
     }//GEN-LAST:event_jMenuItemCompActionPerformed
+
+    private void jMenuItemCopiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCopiarActionPerformed
+        // TODO add your handling code here:
+        setClipboard(jTextPaneCodigo.getText());
+    }//GEN-LAST:event_jMenuItemCopiarActionPerformed
+
+    private void jMenuItemPegarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemPegarActionPerformed
+        // TODO add your handling code here:
+        jTextPaneCodigo.setText(pegar()+'\n');//Hay que checarlo por que hay un bugg al momento de copiarlo
+    }//GEN-LAST:event_jMenuItemPegarActionPerformed
+
+    private void jMenuItemCortarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCortarActionPerformed
+        // TODO add your handling code here:
+        setClipboard(jTextPaneCodigo.getText());
+        jTextPaneCodigo.setText("");
+    }//GEN-LAST:event_jMenuItemCortarActionPerformed
+
+    private void jMenuItemDeshacerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemDeshacerActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "Esta funcionalidad aun no está incluida", "Hey!", JOptionPane.ERROR_MESSAGE);
+    }//GEN-LAST:event_jMenuItemDeshacerActionPerformed
+
+    private void jMenuItemRehacerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemRehacerActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "Esta funcionalidad aun no está incluida", "Hey!", JOptionPane.ERROR_MESSAGE);
+    }//GEN-LAST:event_jMenuItemRehacerActionPerformed
+
+    private void jMenuItemDebugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemDebugActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "Esta funcionalidad aun no está incluida", "Hey!", JOptionPane.ERROR_MESSAGE);
+    }//GEN-LAST:event_jMenuItemDebugActionPerformed
+
+    private void jMenuItemAcercaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAcercaActionPerformed
+        // TODO add your handling code here:
+                JOptionPane.showMessageDialog(null, "Corvex V2.0 2023 - Todos los derechos reservados", "Info", JOptionPane.INFORMATION_MESSAGE);
+
+    }//GEN-LAST:event_jMenuItemAcercaActionPerformed
+
+    private void jMenuItemNosotrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemNosotrosActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "200 mil unidades están listas y un millón más en producción", "Info", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_jMenuItemNosotrosActionPerformed
     //Funciones varias
     private void pintarColores() {
         final StyleContext contexto = StyleContext.getDefaultStyleContext();
@@ -699,7 +852,7 @@ public class Ventana extends javax.swing.JFrame {
             }
         });
     }
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenuArchivo;
@@ -707,10 +860,17 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JMenu jMenuCompilar;
     private javax.swing.JMenu jMenuEditar;
     private javax.swing.JMenu jMenuFormato;
+    private javax.swing.JMenuItem jMenuItemAcerca;
     private javax.swing.JMenuItem jMenuItemArchivo;
     private javax.swing.JMenuItem jMenuItemComp;
+    private javax.swing.JMenuItem jMenuItemCopiar;
+    private javax.swing.JMenuItem jMenuItemCortar;
     private javax.swing.JMenuItem jMenuItemDebug;
+    private javax.swing.JMenuItem jMenuItemDeshacer;
     private javax.swing.JMenuItem jMenuItemGuardar;
+    private javax.swing.JMenuItem jMenuItemNosotros;
+    private javax.swing.JMenuItem jMenuItemPegar;
+    private javax.swing.JMenuItem jMenuItemRehacer;
     private javax.swing.JMenuItem jMenuItemSalir;
     private javax.swing.JPanel jPanelCI;
     private javax.swing.JPanel jPanelErrores;
@@ -736,6 +896,8 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextAreaSintactico;
     private javax.swing.JTextPane jTextPaneCodigo;
     // End of variables declaration//GEN-END:variables
+
+
 
 
 }
