@@ -1,0 +1,2 @@
+Error Linea 22. Sentencia inválida: ;
+Error Linea 24. Sentencia inválida: ;

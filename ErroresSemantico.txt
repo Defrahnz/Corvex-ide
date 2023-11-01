@@ -1,0 +1,6 @@
+Error Linea 3: La variable x, ya se declaro previamente
+Error Linea 3: La variable a, ya se declaro previamente
+Error linea 4: La variable 'suma' no se declaró antes de usarse.
+Error linea 5: tipo erroneo
+Error linea 14: tipo erroneo
+Error linea 33: La variable 'mas' no se declaró antes de usarse.

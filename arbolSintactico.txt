@@ -11,6 +11,8 @@ Programa
  |  |  |  | a
  |  |  |  | b
  |  |  |  | c
+ |  |  |  | x
+ |  |  |  | a
  |  | Asignación
  |  |  | suma
  |  |  | 45
@@ -96,36 +98,41 @@ Programa
  |  |  |  |  |  | Asignación
  |  |  |  |  |  |  | y
  |  |  |  |  |  |  | +
- |  |  |  |  |  |  |  | a
+ |  |  |  |  |  |  |  | 1
  |  |  |  |  |  |  |  | 3
- |  |  | Sentencias
- |  |  |  | SentenciaIf
- |  |  |  |  | >
- |  |  |  |  |  | 4
- |  |  |  |  |  | 2
- |  |  |  |  | Sentencias
- |  |  |  |  |  | Bloque
+ |  |  |  |  |  | SentenciaIf
+ |  |  |  |  |  |  | >
+ |  |  |  |  |  |  |  | 4
+ |  |  |  |  |  |  |  | 2
  |  |  |  |  |  |  | Sentencias
- |  |  |  |  |  |  |  | Asignación
- |  |  |  |  |  |  |  |  | b
- |  |  |  |  |  |  |  |  | 3.2
- |  |  |  |  | Sentencias
- |  |  |  |  |  | Bloque
+ |  |  |  |  |  |  |  | Bloque
+ |  |  |  |  |  |  |  |  | Sentencias
+ |  |  |  |  |  |  |  |  |  | Asignación
+ |  |  |  |  |  |  |  |  |  |  | b
+ |  |  |  |  |  |  |  |  |  |  | 3.2
  |  |  |  |  |  |  | Sentencias
- |  |  |  |  |  |  |  | Asignación
- |  |  |  |  |  |  |  |  | b
- |  |  |  |  |  |  |  |  | 5.0
+ |  |  |  |  |  |  |  | Bloque
+ |  |  |  |  |  |  |  |  | Sentencias
+ |  |  |  |  |  |  |  |  |  | Asignación
+ |  |  |  |  |  |  |  |  |  |  | b
+ |  |  |  |  |  |  |  |  |  |  | 5.0
+ |  |  |  |  |  | Error
  |  |  |  | Asignación
  |  |  |  |  | y
  |  |  |  |  | +
  |  |  |  |  |  | y
  |  |  |  |  |  | 1
+ |  | Error
  |  | Asignación
  |  |  | a
- |  |  | ++
+ |  |  | +
+ |  |  |  | a
+ |  |  |  | 1
  |  | Asignación
  |  |  | c
- |  |  | --
+ |  |  | -
+ |  |  |  | c
+ |  |  |  | 1
  |  | Asignación
  |  |  | x
  |  |  | +
@@ -163,12 +170,6 @@ Programa
  |  |  | /
  |  |  |  | 36
  |  |  |  | 7
- |  | SentenciaWhile
- |  |  | ==
- |  |  |  | y
- |  |  |  | 5
- |  |  | Bloque
- |  |  |  | Sentencias
  |  | SentenciaWhile
  |  |  | ==
  |  |  |  | y

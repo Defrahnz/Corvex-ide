@@ -1,0 +1,225 @@
+ main  <---> palabra reservada <---> 1
+ {  <---> simbolo especial <--->1
+ int  <---> palabra reservada <---> 2
+ x  <---> identificador <--->2
+ ,  <---> simbolo especial <--->2
+ y  <---> identificador <--->2
+ ,  <---> simbolo especial <--->2
+ z  <---> identificador <--->2
+ ;  <---> simbolo especial <--->2
+ float  <---> palabra reservada <---> 3
+ a  <---> identificador <--->3
+ ,  <---> simbolo especial <--->3
+ b  <---> identificador <--->3
+ ,  <---> simbolo especial <--->3
+ c  <---> identificador <--->3
+ ,  <---> simbolo especial <--->3
+ x  <---> identificador <--->3
+ ,  <---> simbolo especial <--->3
+ a  <---> identificador <--->3
+ ;  <---> simbolo especial <--->3
+ suma  <---> identificador <--->4
+ =  <---> operador aritmetico <--->4
+ 45 <---> entero <---> 4
+ ;  <---> simbolo especial <--->4
+ x  <---> identificador <--->5
+ =  <---> operador aritmetico <--->5
+ 32.32 <---> flotante <---> 5
+ ;  <---> simbolo especial <--->5
+ x  <---> identificador <--->6
+ =  <---> operador aritmetico <--->6
+ 23 <---> entero <---> 6
+ ;  <---> simbolo especial <--->6
+ y  <---> identificador <--->7
+ =  <---> operador aritmetico <--->7
+ 2 <---> entero <---> 7
+ +  <---> operador aritmetico <--->7
+ 3 <---> entero <---> 7
+ -  <---> operador aritmetico <--->7
+ 1 <---> entero <---> 7
+ ;  <---> simbolo especial <--->7
+ z  <---> identificador <--->8
+ =  <---> operador aritmetico <--->8
+ y  <---> identificador <--->8
+ +  <---> operador aritmetico <--->8
+ 7 <---> entero <---> 8
+ ;  <---> simbolo especial <--->8
+ y  <---> identificador <--->9
+ =  <---> operador aritmetico <--->9
+ y  <---> identificador <--->9
+ +  <---> operador aritmetico <--->9
+ 1 <---> entero <---> 9
+ ;  <---> simbolo especial <--->9
+ a  <---> identificador <--->10
+ =  <---> operador aritmetico <--->10
+ 24.0 <---> flotante <---> 10
+ +  <---> operador aritmetico <--->10
+ 4 <---> entero <---> 10
+ -  <---> operador aritmetico <--->10
+ 1 <---> entero <---> 10
+ /  <---> operador aritmetico <--->10
+ 3 <---> entero <---> 10
+ *  <---> operador aritmetico <--->10
+ 2 <---> entero <---> 10
+ +  <---> operador aritmetico <--->10
+ 34 <---> entero <---> 10
+ -  <---> operador aritmetico <--->10
+ 1 <---> entero <---> 10
+ ;  <---> simbolo especial <--->10
+ x  <---> identificador <--->11
+ =  <---> operador aritmetico <--->11
+ (  <---> simbolo especial <--->11
+ 5 <---> entero <---> 11
+ -  <---> operador aritmetico <--->11
+ 3 <---> entero <---> 11
+ )  <---> simbolo especial <--->11
+ *  <---> operador aritmetico <--->11
+ (  <---> simbolo especial <--->11
+ 8 <---> entero <---> 11
+ /  <---> operador aritmetico <--->11
+ 2 <---> entero <---> 11
+ )  <---> simbolo especial <--->11
+ ;  <---> simbolo especial <--->11
+ y  <---> identificador <--->12
+ =  <---> operador aritmetico <--->12
+ 5 <---> entero <---> 12
+ +  <---> operador aritmetico <--->12
+ 3 <---> entero <---> 12
+ -  <---> operador aritmetico <--->12
+ 2 <---> entero <---> 12
+ *  <---> operador aritmetico <--->12
+ 4 <---> entero <---> 12
+ /  <---> operador aritmetico <--->12
+ 7 <---> entero <---> 12
+ -  <---> operador aritmetico <--->12
+ 9 <---> entero <---> 12
+ ;  <---> simbolo especial <--->12
+ z  <---> identificador <--->13
+ =  <---> operador aritmetico <--->13
+ 8 <---> entero <---> 13
+ /  <---> operador aritmetico <--->13
+ 2 <---> entero <---> 13
+ +  <---> operador aritmetico <--->13
+ 15 <---> entero <---> 13
+ *  <---> operador aritmetico <--->13
+ 4 <---> entero <---> 13
+ ;  <---> simbolo especial <--->13
+ y  <---> identificador <--->14
+ =  <---> operador aritmetico <--->14
+ 14.54 <---> flotante <---> 14
+ ;  <---> simbolo especial <--->14
+ if  <---> palabra reservada <---> 15
+ (  <---> simbolo especial <--->15
+ 2 <---> entero <---> 15
+ > <---> operador relacional <--->15
+ 3 <---> entero <---> 15
+ )  <---> simbolo especial <--->15
+ {  <---> simbolo especial <--->15
+ y  <---> identificador <--->16
+ =  <---> operador aritmetico <--->16
+ 1 <---> entero <---> 16
+ +  <---> operador aritmetico <--->16
+ 3 <---> entero <---> 16
+ ;  <---> simbolo especial <--->16
+ if  <---> palabra reservada <---> 17
+ (  <---> simbolo especial <--->17
+ 4 <---> entero <---> 17
+ > <---> operador relacional <--->17
+ 2 <---> entero <---> 17
+ )  <---> simbolo especial <--->17
+ {  <---> simbolo especial <--->17
+ b  <---> identificador <--->18
+ =  <---> operador aritmetico <--->18
+ 3.2 <---> flotante <---> 18
+ ;  <---> simbolo especial <--->18
+ }  <---> simbolo especial <--->19
+ else  <---> palabra reservada <---> 19
+ {  <---> simbolo especial <--->19
+ b  <---> identificador <--->20
+ =  <---> operador aritmetico <--->20
+ 5.0 <---> flotante <---> 20
+ ;  <---> simbolo especial <--->20
+ }  <---> simbolo especial <--->21
+ end  <---> palabra reservada <---> 22
+ ;  <---> simbolo especial <--->22
+ }  <---> simbolo especial <--->23
+ y  <---> identificador <--->23
+ =  <---> operador aritmetico <--->23
+ y  <---> identificador <--->23
+ +  <---> operador aritmetico <--->23
+ 1 <---> entero <---> 23
+ ;  <---> simbolo especial <--->23
+ end  <---> palabra reservada <---> 24
+ ;  <---> simbolo especial <--->24
+ a  <---> identificador <--->25
+ ++<---> operador aritmetico <--->25
+ ;  <---> simbolo especial <--->25
+ c  <---> identificador <--->26
+ --<---> operador aritmetico <--->26
+ ;  <---> simbolo especial <--->26
+ x  <---> identificador <--->27
+ =  <---> operador aritmetico <--->27
+ 3 <---> entero <---> 27
+ +  <---> operador aritmetico <--->27
+ 4 <---> entero <---> 27
+ ;  <---> simbolo especial <--->27
+ do  <---> palabra reservada <---> 28
+ y  <---> identificador <--->29
+ =  <---> operador aritmetico <--->29
+ (  <---> simbolo especial <--->29
+ y  <---> identificador <--->29
+ +  <---> operador aritmetico <--->29
+ 1 <---> entero <---> 29
+ )  <---> simbolo especial <--->29
+ *  <---> operador aritmetico <--->29
+ 2 <---> entero <---> 29
+ +  <---> operador aritmetico <--->29
+ 1 <---> entero <---> 29
+ ;  <---> simbolo especial <--->29
+ until  <---> palabra reservada <---> 30
+ (  <---> simbolo especial <--->30
+ x  <---> identificador <--->30
+ > <---> operador relacional <--->30
+ 7 <---> entero <---> 30
+ )  <---> simbolo especial <--->30
+ ;  <---> simbolo especial <--->30
+ x  <---> identificador <--->31
+ =  <---> operador aritmetico <--->31
+ 6 <---> entero <---> 31
+ +  <---> operador aritmetico <--->31
+ 8 <---> entero <---> 31
+ /  <---> operador aritmetico <--->31
+ 9 <---> entero <---> 31
+ *  <---> operador aritmetico <--->31
+ 8 <---> entero <---> 31
+ /  <---> operador aritmetico <--->31
+ 3 <---> entero <---> 31
+ ;  <---> simbolo especial <--->31
+ cin  <---> palabra reservada <---> 32
+ x  <---> identificador <--->32
+ ;  <---> simbolo especial <--->32
+ mas  <---> identificador <--->33
+ =  <---> operador aritmetico <--->33
+ 36 <---> entero <---> 33
+ /  <---> operador aritmetico <--->33
+ 7 <---> entero <---> 33
+ ;  <---> simbolo especial <--->33
+ while  <---> palabra reservada <---> 34
+ (  <---> simbolo especial <--->34
+ y  <---> identificador <--->34
+ == <---> operador relacional <--->34
+ 0 <---> entero <---> 34
+ )  <---> simbolo especial <--->34
+ {  <---> simbolo especial <--->34
+ cin  <---> palabra reservada <---> 35
+ mas  <---> identificador <--->35
+ ;  <---> simbolo especial <--->35
+ cout  <---> palabra reservada <---> 36
+ x  <---> identificador <--->36
+ +  <---> operador aritmetico <--->36
+ 32 <---> entero <---> 36
+ /  <---> operador aritmetico <--->36
+ 54 <---> entero <---> 36
+ ;  <---> simbolo especial <--->36
+ }  <---> simbolo especial <--->37
+ }  <---> simbolo especial <--->38
