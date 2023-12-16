@@ -1,7 +1,14 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package corvex;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.awt.Dimension;
+import javax.swing.SwingUtilities;
 
 public class Main {
     public static void main(String[] args) {
@@ -16,9 +23,12 @@ public class Main {
         tokens.add(new Token("2", "integer"));
         tokens.add(new Token(";", "symbol"));
         tokens.add(new Token("}", "symbol"));
-        
+       
+
         SyntaxAnalyzer analyzer = new SyntaxAnalyzer(tokens);
         analyzer.parse();
+        
+        //Generamos la ventana
         Ventana vent=new Ventana();
         vent.setResizable(true);
         vent.setVisible(true);
