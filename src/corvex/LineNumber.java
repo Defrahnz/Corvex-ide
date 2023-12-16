@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package corvex;
 
 import java.awt.*;
@@ -9,6 +14,15 @@ import javax.swing.border.*;
 import javax.swing.event.*;
 import javax.swing.text.*;
 
+/**
+ * This class will display line numbers for a related text component. The text
+ * component must use the same line height for each line. TextLineNumber
+ * supports wrapped lines and will highlight the line number of the current line
+ * in the text component.
+ *
+ * This class was designed to be used as a component added to the row header of
+ * a JScrollPane.
+ */
 public class LineNumber extends JPanel
         implements CaretListener, DocumentListener, PropertyChangeListener {
 
@@ -48,6 +62,13 @@ public class LineNumber extends JPanel
         this(component, 3);
     }
 
+    /**
+     * Create a line number component for a text component.
+     *
+     * @param component the related text component
+     * @param minimumDisplayDigits the number of digits used to calculate the
+     * minimum width of the component
+     */
     public LineNumber(JTextPane component, int minimumDisplayDigits) {
         this.component = component;
 
@@ -74,18 +95,42 @@ public class LineNumber extends JPanel
         }
     }
 
+    /**
+     * Gets the update font property
+     *
+     * @return the update font property
+     */
     public boolean getUpdateFont() {
         return updateFont;
     }
 
+    /**
+     * Set the update font property. Indicates whether this Font should be
+     * updated automatically when the Font of the related text component is
+     * changed.
+     *
+     * @param updateFont when true update the Font and repaint the line numbers,
+     * otherwise just repaint the line numbers.
+     */
     public void setUpdateFont(boolean updateFont) {
         this.updateFont = updateFont;
     }
 
+    /**
+     * Gets the border gap
+     *
+     * @return the border gap in pixels
+     */
     public int getBorderGap() {
         return borderGap;
     }
 
+    /**
+     * The border gap is used in calculating the left and right insets of the
+     * border. Default value is 5.
+     *
+     * @param borderGap the gap in pixels
+     */
     public void setBorderGap(int borderGap) {
         this.borderGap = borderGap;
         Border inner = new EmptyBorder(0, borderGap, 0, borderGap);
@@ -94,32 +139,73 @@ public class LineNumber extends JPanel
         setPreferredWidth();
     }
 
+    /**
+     * Gets the current line rendering Color
+     *
+     * @return the Color used to render the current line number
+     */
     public Color getCurrentLineForeground() {
         return currentLineForeground == null ? getForeground() : currentLineForeground;
     }
 
+    /**
+     * The Color used to render the current line digits. Default is Coolor.RED.
+     *
+     * @param currentLineForeground the Color used to render the current line
+     */
     public void setCurrentLineForeground(Color currentLineForeground) {
         this.currentLineForeground = currentLineForeground;
     }
 
+    /**
+     * Gets the digit alignment
+     *
+     * @return the alignment of the painted digits
+     */
     public float getDigitAlignment() {
         return digitAlignment;
     }
 
+    /**
+     * Specify the horizontal alignment of the digits within the component.
+     * Common values would be:
+     * <ul>
+     * <li>TextLineNumber.LEFT
+     * <li>TextLineNumber.CENTER
+     * <li>TextLineNumber.RIGHT (default)
+     * </ul>
+     *
+     * @param currentLineForeground the Color used to render the current line
+     */
     public void setDigitAlignment(float digitAlignment) {
         this.digitAlignment
                 = digitAlignment > 1.0f ? 1.0f : digitAlignment < 0.0f ? -1.0f : digitAlignment;
     }
 
+    /**
+     * Gets the minimum display digits
+     *
+     * @return the minimum display digits
+     */
     public int getMinimumDisplayDigits() {
         return minimumDisplayDigits;
     }
 
+    /**
+     * Specify the mimimum number of digits used to calculate the preferred
+     * width of the component. Default is 3.
+     *
+     * @param minimumDisplayDigits the number digits used in the preferred width
+     * calculation
+     */
     public void setMinimumDisplayDigits(int minimumDisplayDigits) {
         this.minimumDisplayDigits = minimumDisplayDigits;
         setPreferredWidth();
     }
 
+    /**
+     * Calculate the width needed to display the maximum line number
+     */
     private void setPreferredWidth() {
         Element root = component.getDocument().getDefaultRootElement();
         int lines = root.getElementCount();
@@ -140,6 +226,9 @@ public class LineNumber extends JPanel
         }
     }
 
+    /**
+     * Draw the line numbers
+     */
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -178,6 +267,10 @@ public class LineNumber extends JPanel
         }
     }
 
+    /*
+     *  We need to know if the caret is currently positioned on the line we
+     *  are about to paint so the line number can be highlighted.
+     */
     private boolean isCurrentLine(int rowStartOffset) {
         int caretPosition = component.getCaretPosition();
         Element root = component.getDocument().getDefaultRootElement();
@@ -188,6 +281,7 @@ public class LineNumber extends JPanel
             return false;
         }
     }
+
     /*
      *	Get the line number to be drawn. The empty string will be returned
      *  when a line of text has wrapped.
