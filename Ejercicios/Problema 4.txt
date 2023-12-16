@@ -1,0 +1,52 @@
+main{
+int voto;
+int votoc1,votoc2,votoc3,votoc4;
+votoc1=0;
+votoc2=0;
+votoc3=0;
+votoc4=0;
+int totalvotos;
+totalvotos=0;
+float porcentaje1,porcentaje2,porcentaje3,porcentaje4;
+do{
+cin voto;
+if (voto==1){
+votoc1=votoc1+1;
+totalvotos++;
+//cout voto;
+}else{
+if (voto==2){
+votoc2=votoc2+1;
+totalvotos++;
+//cout voto;
+}else{
+if (voto==3){
+votoc3=votoc3+1;
+totalvotos++;
+//cout voto;
+}else{
+if (voto==4){
+votoc4=votoc4+1;
+totalvotos++;
+//cout voto;
+}else{
+//cout voto;
+}end
+}end
+}end
+}end
+}until (voto !=0);
+porcentaje1=votoc1 / totalvotos * 100;
+
+porcentaje2=votoc2 / totalvotos * 100;
+
+porcentaje3=votoc3 / totalvotos * 100;
+
+porcentaje4=votoc4 / totalvotos * 100;
+
+cout porcentaje1;
+cout porcentaje2;
+cout porcentaje3;
+cout porcentaje4;
+
+}
