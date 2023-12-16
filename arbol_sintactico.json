@@ -1,0 +1,1364 @@
+{
+    "value": "Programa",
+    "children": [
+        {
+            "value": "Sentencias",
+            "children": [
+                {
+                    "value": "Declaraci\u00f3nInt",
+                    "children": [
+                        {
+                            "value": "IdList",
+                            "children": [
+                                {
+                                    "value": "voto",
+                                    "children": [],
+                                    "line_no": "2",
+                                    "type": "int",
+                                    "identificator": false,
+                                    "val": 0
+                                }
+                            ],
+                            "line_no": null,
+                            "type": null,
+                            "identificator": false,
+                            "val": null
+                        }
+                    ],
+                    "line_no": "2",
+                    "type": null,
+                    "identificator": false,
+                    "val": null
+                },
+                {
+                    "value": "Declaraci\u00f3nInt",
+                    "children": [
+                        {
+                            "value": "IdList",
+                            "children": [
+                                {
+                                    "value": "votoc1",
+                                    "children": [],
+                                    "line_no": "3",
+                                    "type": "int",
+                                    "identificator": false,
+                                    "val": 0
+                                },
+                                {
+                                    "value": "votoc2",
+                                    "children": [],
+                                    "line_no": "3",
+                                    "type": "int",
+                                    "identificator": false,
+                                    "val": 0
+                                },
+                                {
+                                    "value": "votoc3",
+                                    "children": [],
+                                    "line_no": "3",
+                                    "type": "int",
+                                    "identificator": false,
+                                    "val": 0
+                                },
+                                {
+                                    "value": "votoc4",
+                                    "children": [],
+                                    "line_no": "3",
+                                    "type": "int",
+                                    "identificator": false,
+                                    "val": 0
+                                }
+                            ],
+                            "line_no": null,
+                            "type": null,
+                            "identificator": false,
+                            "val": null
+                        }
+                    ],
+                    "line_no": "3",
+                    "type": null,
+                    "identificator": false,
+                    "val": null
+                },
+                {
+                    "value": "Asignaci\u00f3n",
+                    "children": [
+                        {
+                            "value": "votoc1",
+                            "children": [],
+                            "line_no": "4",
+                            "type": "int",
+                            "identificator": true,
+                            "val": null
+                        },
+                        {
+                            "value": "0",
+                            "children": [],
+                            "line_no": "4",
+                            "type": "int",
+                            "identificator": false,
+                            "val": 0
+                        }
+                    ],
+                    "line_no": "4",
+                    "type": "int",
+                    "identificator": false,
+                    "val": 0
+                },
+                {
+                    "value": "Asignaci\u00f3n",
+                    "children": [
+                        {
+                            "value": "votoc2",
+                            "children": [],
+                            "line_no": "5",
+                            "type": "int",
+                            "identificator": true,
+                            "val": null
+                        },
+                        {
+                            "value": "0",
+                            "children": [],
+                            "line_no": "5",
+                            "type": "int",
+                            "identificator": false,
+                            "val": 0
+                        }
+                    ],
+                    "line_no": "5",
+                    "type": "int",
+                    "identificator": false,
+                    "val": 0
+                },
+                {
+                    "value": "Asignaci\u00f3n",
+                    "children": [
+                        {
+                            "value": "votoc3",
+                            "children": [],
+                            "line_no": "6",
+                            "type": "int",
+                            "identificator": true,
+                            "val": null
+                        },
+                        {
+                            "value": "0",
+                            "children": [],
+                            "line_no": "6",
+                            "type": "int",
+                            "identificator": false,
+                            "val": 0
+                        }
+                    ],
+                    "line_no": "6",
+                    "type": "int",
+                    "identificator": false,
+                    "val": 0
+                },
+                {
+                    "value": "Asignaci\u00f3n",
+                    "children": [
+                        {
+                            "value": "votoc4",
+                            "children": [],
+                            "line_no": "7",
+                            "type": "int",
+                            "identificator": true,
+                            "val": null
+                        },
+                        {
+                            "value": "0",
+                            "children": [],
+                            "line_no": "7",
+                            "type": "int",
+                            "identificator": false,
+                            "val": 0
+                        }
+                    ],
+                    "line_no": "7",
+                    "type": "int",
+                    "identificator": false,
+                    "val": 0
+                },
+                {
+                    "value": "Declaraci\u00f3nInt",
+                    "children": [
+                        {
+                            "value": "IdList",
+                            "children": [
+                                {
+                                    "value": "totalvotos",
+                                    "children": [],
+                                    "line_no": "8",
+                                    "type": "int",
+                                    "identificator": false,
+                                    "val": 0
+                                }
+                            ],
+                            "line_no": null,
+                            "type": null,
+                            "identificator": false,
+                            "val": null
+                        }
+                    ],
+                    "line_no": "8",
+                    "type": null,
+                    "identificator": false,
+                    "val": null
+                },
+                {
+                    "value": "Asignaci\u00f3n",
+                    "children": [
+                        {
+                            "value": "totalvotos",
+                            "children": [],
+                            "line_no": "9",
+                            "type": "int",
+                            "identificator": true,
+                            "val": null
+                        },
+                        {
+                            "value": "0",
+                            "children": [],
+                            "line_no": "9",
+                            "type": "int",
+                            "identificator": false,
+                            "val": 0
+                        }
+                    ],
+                    "line_no": "9",
+                    "type": "int",
+                    "identificator": false,
+                    "val": 0
+                },
+                {
+                    "value": "Declaraci\u00f3nInt",
+                    "children": [
+                        {
+                            "value": "IdList",
+                            "children": [
+                                {
+                                    "value": "porcentaje1",
+                                    "children": [],
+                                    "line_no": "10",
+                                    "type": "int",
+                                    "identificator": false,
+                                    "val": 0
+                                },
+                                {
+                                    "value": "porcentaje2",
+                                    "children": [],
+                                    "line_no": "10",
+                                    "type": "int",
+                                    "identificator": false,
+                                    "val": 0
+                                },
+                                {
+                                    "value": "porcentaje3",
+                                    "children": [],
+                                    "line_no": "10",
+                                    "type": "int",
+                                    "identificator": false,
+                                    "val": 0
+                                },
+                                {
+                                    "value": "porcentaje4",
+                                    "children": [],
+                                    "line_no": "10",
+                                    "type": "int",
+                                    "identificator": false,
+                                    "val": 0
+                                }
+                            ],
+                            "line_no": null,
+                            "type": null,
+                            "identificator": false,
+                            "val": null
+                        }
+                    ],
+                    "line_no": "10",
+                    "type": null,
+                    "identificator": false,
+                    "val": null
+                },
+                {
+                    "value": "SentenciaDo",
+                    "children": [
+                        {
+                            "value": "Bloque",
+                            "children": [
+                                {
+                                    "value": "Sentencias",
+                                    "children": [
+                                        {
+                                            "value": "SentenciaInput",
+                                            "children": [
+                                                {
+                                                    "value": "IdList",
+                                                    "children": [
+                                                        {
+                                                            "value": "voto",
+                                                            "children": [],
+                                                            "line_no": "12",
+                                                            "type": null,
+                                                            "identificator": false,
+                                                            "val": null
+                                                        }
+                                                    ],
+                                                    "line_no": null,
+                                                    "type": null,
+                                                    "identificator": false,
+                                                    "val": null
+                                                }
+                                            ],
+                                            "line_no": "12",
+                                            "type": null,
+                                            "identificator": false,
+                                            "val": null
+                                        },
+                                        {
+                                            "value": "SentenciaIf",
+                                            "children": [
+                                                {
+                                                    "value": "==",
+                                                    "children": [
+                                                        {
+                                                            "value": "voto",
+                                                            "children": [],
+                                                            "line_no": "13",
+                                                            "type": "int",
+                                                            "identificator": true,
+                                                            "val": 0
+                                                        },
+                                                        {
+                                                            "value": "1",
+                                                            "children": [],
+                                                            "line_no": "13",
+                                                            "type": "int",
+                                                            "identificator": false,
+                                                            "val": 1
+                                                        }
+                                                    ],
+                                                    "line_no": "13",
+                                                    "type": "boolean",
+                                                    "identificator": false,
+                                                    "val": false
+                                                },
+                                                {
+                                                    "value": "Sentencias",
+                                                    "children": [
+                                                        {
+                                                            "value": "Bloque",
+                                                            "children": [
+                                                                {
+                                                                    "value": "Sentencias",
+                                                                    "children": [
+                                                                        {
+                                                                            "value": "Asignaci\u00f3n",
+                                                                            "children": [
+                                                                                {
+                                                                                    "value": "votoc1",
+                                                                                    "children": [],
+                                                                                    "line_no": "14",
+                                                                                    "type": "int",
+                                                                                    "identificator": true,
+                                                                                    "val": null
+                                                                                },
+                                                                                {
+                                                                                    "value": "+",
+                                                                                    "children": [
+                                                                                        {
+                                                                                            "value": "votoc1",
+                                                                                            "children": [],
+                                                                                            "line_no": "14",
+                                                                                            "type": "int",
+                                                                                            "identificator": true,
+                                                                                            "val": 0
+                                                                                        },
+                                                                                        {
+                                                                                            "value": "1",
+                                                                                            "children": [],
+                                                                                            "line_no": "14",
+                                                                                            "type": "int",
+                                                                                            "identificator": false,
+                                                                                            "val": 1
+                                                                                        }
+                                                                                    ],
+                                                                                    "line_no": "14",
+                                                                                    "type": "int",
+                                                                                    "identificator": false,
+                                                                                    "val": 1
+                                                                                }
+                                                                            ],
+                                                                            "line_no": "14",
+                                                                            "type": "int",
+                                                                            "identificator": false,
+                                                                            "val": 1
+                                                                        },
+                                                                        {
+                                                                            "value": "Asignaci\u00f3n",
+                                                                            "children": [
+                                                                                {
+                                                                                    "value": "totalvotos",
+                                                                                    "children": [],
+                                                                                    "line_no": "15",
+                                                                                    "type": "int",
+                                                                                    "identificator": true,
+                                                                                    "val": 0
+                                                                                },
+                                                                                {
+                                                                                    "value": "+",
+                                                                                    "children": [
+                                                                                        {
+                                                                                            "value": "totalvotos",
+                                                                                            "children": [],
+                                                                                            "line_no": "15",
+                                                                                            "type": "int",
+                                                                                            "identificator": true,
+                                                                                            "val": 0
+                                                                                        },
+                                                                                        {
+                                                                                            "value": "1",
+                                                                                            "children": [],
+                                                                                            "line_no": null,
+                                                                                            "type": "int",
+                                                                                            "identificator": false,
+                                                                                            "val": 1
+                                                                                        }
+                                                                                    ],
+                                                                                    "line_no": null,
+                                                                                    "type": "int",
+                                                                                    "identificator": false,
+                                                                                    "val": 1
+                                                                                }
+                                                                            ],
+                                                                            "line_no": "15",
+                                                                            "type": "int",
+                                                                            "identificator": false,
+                                                                            "val": 1
+                                                                        }
+                                                                    ],
+                                                                    "line_no": null,
+                                                                    "type": null,
+                                                                    "identificator": false,
+                                                                    "val": null
+                                                                }
+                                                            ],
+                                                            "line_no": "13",
+                                                            "type": null,
+                                                            "identificator": false,
+                                                            "val": null
+                                                        }
+                                                    ],
+                                                    "line_no": null,
+                                                    "type": null,
+                                                    "identificator": false,
+                                                    "val": null
+                                                },
+                                                {
+                                                    "value": "Sentencias",
+                                                    "children": [
+                                                        {
+                                                            "value": "Bloque",
+                                                            "children": [
+                                                                {
+                                                                    "value": "Sentencias",
+                                                                    "children": [
+                                                                        {
+                                                                            "value": "SentenciaIf",
+                                                                            "children": [
+                                                                                {
+                                                                                    "value": "==",
+                                                                                    "children": [
+                                                                                        {
+                                                                                            "value": "voto",
+                                                                                            "children": [],
+                                                                                            "line_no": "18",
+                                                                                            "type": "int",
+                                                                                            "identificator": true,
+                                                                                            "val": 0
+                                                                                        },
+                                                                                        {
+                                                                                            "value": "2",
+                                                                                            "children": [],
+                                                                                            "line_no": "18",
+                                                                                            "type": "int",
+                                                                                            "identificator": false,
+                                                                                            "val": 2
+                                                                                        }
+                                                                                    ],
+                                                                                    "line_no": "18",
+                                                                                    "type": "boolean",
+                                                                                    "identificator": false,
+                                                                                    "val": false
+                                                                                },
+                                                                                {
+                                                                                    "value": "Sentencias",
+                                                                                    "children": [
+                                                                                        {
+                                                                                            "value": "Bloque",
+                                                                                            "children": [
+                                                                                                {
+                                                                                                    "value": "Sentencias",
+                                                                                                    "children": [
+                                                                                                        {
+                                                                                                            "value": "Asignaci\u00f3n",
+                                                                                                            "children": [
+                                                                                                                {
+                                                                                                                    "value": "votoc2",
+                                                                                                                    "children": [],
+                                                                                                                    "line_no": "19",
+                                                                                                                    "type": "int",
+                                                                                                                    "identificator": true,
+                                                                                                                    "val": null
+                                                                                                                },
+                                                                                                                {
+                                                                                                                    "value": "+",
+                                                                                                                    "children": [
+                                                                                                                        {
+                                                                                                                            "value": "votoc2",
+                                                                                                                            "children": [],
+                                                                                                                            "line_no": "19",
+                                                                                                                            "type": "int",
+                                                                                                                            "identificator": true,
+                                                                                                                            "val": 0
+                                                                                                                        },
+                                                                                                                        {
+                                                                                                                            "value": "1",
+                                                                                                                            "children": [],
+                                                                                                                            "line_no": "19",
+                                                                                                                            "type": "int",
+                                                                                                                            "identificator": false,
+                                                                                                                            "val": 1
+                                                                                                                        }
+                                                                                                                    ],
+                                                                                                                    "line_no": "19",
+                                                                                                                    "type": "int",
+                                                                                                                    "identificator": false,
+                                                                                                                    "val": 1
+                                                                                                                }
+                                                                                                            ],
+                                                                                                            "line_no": "19",
+                                                                                                            "type": "int",
+                                                                                                            "identificator": false,
+                                                                                                            "val": 1
+                                                                                                        },
+                                                                                                        {
+                                                                                                            "value": "Asignaci\u00f3n",
+                                                                                                            "children": [
+                                                                                                                {
+                                                                                                                    "value": "totalvotos",
+                                                                                                                    "children": [],
+                                                                                                                    "line_no": "20",
+                                                                                                                    "type": "int",
+                                                                                                                    "identificator": true,
+                                                                                                                    "val": 1
+                                                                                                                },
+                                                                                                                {
+                                                                                                                    "value": "+",
+                                                                                                                    "children": [
+                                                                                                                        {
+                                                                                                                            "value": "totalvotos",
+                                                                                                                            "children": [],
+                                                                                                                            "line_no": "20",
+                                                                                                                            "type": "int",
+                                                                                                                            "identificator": true,
+                                                                                                                            "val": 1
+                                                                                                                        },
+                                                                                                                        {
+                                                                                                                            "value": "1",
+                                                                                                                            "children": [],
+                                                                                                                            "line_no": null,
+                                                                                                                            "type": "int",
+                                                                                                                            "identificator": false,
+                                                                                                                            "val": 1
+                                                                                                                        }
+                                                                                                                    ],
+                                                                                                                    "line_no": null,
+                                                                                                                    "type": "int",
+                                                                                                                    "identificator": false,
+                                                                                                                    "val": 2
+                                                                                                                }
+                                                                                                            ],
+                                                                                                            "line_no": "20",
+                                                                                                            "type": "int",
+                                                                                                            "identificator": false,
+                                                                                                            "val": 2
+                                                                                                        }
+                                                                                                    ],
+                                                                                                    "line_no": null,
+                                                                                                    "type": null,
+                                                                                                    "identificator": false,
+                                                                                                    "val": null
+                                                                                                }
+                                                                                            ],
+                                                                                            "line_no": "18",
+                                                                                            "type": null,
+                                                                                            "identificator": false,
+                                                                                            "val": null
+                                                                                        }
+                                                                                    ],
+                                                                                    "line_no": null,
+                                                                                    "type": null,
+                                                                                    "identificator": false,
+                                                                                    "val": null
+                                                                                },
+                                                                                {
+                                                                                    "value": "Sentencias",
+                                                                                    "children": [
+                                                                                        {
+                                                                                            "value": "Bloque",
+                                                                                            "children": [
+                                                                                                {
+                                                                                                    "value": "Sentencias",
+                                                                                                    "children": [
+                                                                                                        {
+                                                                                                            "value": "SentenciaIf",
+                                                                                                            "children": [
+                                                                                                                {
+                                                                                                                    "value": "==",
+                                                                                                                    "children": [
+                                                                                                                        {
+                                                                                                                            "value": "voto",
+                                                                                                                            "children": [],
+                                                                                                                            "line_no": "23",
+                                                                                                                            "type": "int",
+                                                                                                                            "identificator": true,
+                                                                                                                            "val": 0
+                                                                                                                        },
+                                                                                                                        {
+                                                                                                                            "value": "3",
+                                                                                                                            "children": [],
+                                                                                                                            "line_no": "23",
+                                                                                                                            "type": "int",
+                                                                                                                            "identificator": false,
+                                                                                                                            "val": 3
+                                                                                                                        }
+                                                                                                                    ],
+                                                                                                                    "line_no": "23",
+                                                                                                                    "type": "boolean",
+                                                                                                                    "identificator": false,
+                                                                                                                    "val": false
+                                                                                                                },
+                                                                                                                {
+                                                                                                                    "value": "Sentencias",
+                                                                                                                    "children": [
+                                                                                                                        {
+                                                                                                                            "value": "Bloque",
+                                                                                                                            "children": [
+                                                                                                                                {
+                                                                                                                                    "value": "Sentencias",
+                                                                                                                                    "children": [
+                                                                                                                                        {
+                                                                                                                                            "value": "Asignaci\u00f3n",
+                                                                                                                                            "children": [
+                                                                                                                                                {
+                                                                                                                                                    "value": "votoc3",
+                                                                                                                                                    "children": [],
+                                                                                                                                                    "line_no": "24",
+                                                                                                                                                    "type": "int",
+                                                                                                                                                    "identificator": true,
+                                                                                                                                                    "val": null
+                                                                                                                                                },
+                                                                                                                                                {
+                                                                                                                                                    "value": "+",
+                                                                                                                                                    "children": [
+                                                                                                                                                        {
+                                                                                                                                                            "value": "votoc3",
+                                                                                                                                                            "children": [],
+                                                                                                                                                            "line_no": "24",
+                                                                                                                                                            "type": "int",
+                                                                                                                                                            "identificator": true,
+                                                                                                                                                            "val": 0
+                                                                                                                                                        },
+                                                                                                                                                        {
+                                                                                                                                                            "value": "1",
+                                                                                                                                                            "children": [],
+                                                                                                                                                            "line_no": "24",
+                                                                                                                                                            "type": "int",
+                                                                                                                                                            "identificator": false,
+                                                                                                                                                            "val": 1
+                                                                                                                                                        }
+                                                                                                                                                    ],
+                                                                                                                                                    "line_no": "24",
+                                                                                                                                                    "type": "int",
+                                                                                                                                                    "identificator": false,
+                                                                                                                                                    "val": 1
+                                                                                                                                                }
+                                                                                                                                            ],
+                                                                                                                                            "line_no": "24",
+                                                                                                                                            "type": "int",
+                                                                                                                                            "identificator": false,
+                                                                                                                                            "val": 1
+                                                                                                                                        },
+                                                                                                                                        {
+                                                                                                                                            "value": "Asignaci\u00f3n",
+                                                                                                                                            "children": [
+                                                                                                                                                {
+                                                                                                                                                    "value": "totalvotos",
+                                                                                                                                                    "children": [],
+                                                                                                                                                    "line_no": "25",
+                                                                                                                                                    "type": "int",
+                                                                                                                                                    "identificator": true,
+                                                                                                                                                    "val": 2
+                                                                                                                                                },
+                                                                                                                                                {
+                                                                                                                                                    "value": "+",
+                                                                                                                                                    "children": [
+                                                                                                                                                        {
+                                                                                                                                                            "value": "totalvotos",
+                                                                                                                                                            "children": [],
+                                                                                                                                                            "line_no": "25",
+                                                                                                                                                            "type": "int",
+                                                                                                                                                            "identificator": true,
+                                                                                                                                                            "val": 2
+                                                                                                                                                        },
+                                                                                                                                                        {
+                                                                                                                                                            "value": "1",
+                                                                                                                                                            "children": [],
+                                                                                                                                                            "line_no": null,
+                                                                                                                                                            "type": "int",
+                                                                                                                                                            "identificator": false,
+                                                                                                                                                            "val": 1
+                                                                                                                                                        }
+                                                                                                                                                    ],
+                                                                                                                                                    "line_no": null,
+                                                                                                                                                    "type": "int",
+                                                                                                                                                    "identificator": false,
+                                                                                                                                                    "val": 3
+                                                                                                                                                }
+                                                                                                                                            ],
+                                                                                                                                            "line_no": "25",
+                                                                                                                                            "type": "int",
+                                                                                                                                            "identificator": false,
+                                                                                                                                            "val": 3
+                                                                                                                                        }
+                                                                                                                                    ],
+                                                                                                                                    "line_no": null,
+                                                                                                                                    "type": null,
+                                                                                                                                    "identificator": false,
+                                                                                                                                    "val": null
+                                                                                                                                }
+                                                                                                                            ],
+                                                                                                                            "line_no": "23",
+                                                                                                                            "type": null,
+                                                                                                                            "identificator": false,
+                                                                                                                            "val": null
+                                                                                                                        }
+                                                                                                                    ],
+                                                                                                                    "line_no": null,
+                                                                                                                    "type": null,
+                                                                                                                    "identificator": false,
+                                                                                                                    "val": null
+                                                                                                                },
+                                                                                                                {
+                                                                                                                    "value": "Sentencias",
+                                                                                                                    "children": [
+                                                                                                                        {
+                                                                                                                            "value": "Bloque",
+                                                                                                                            "children": [
+                                                                                                                                {
+                                                                                                                                    "value": "Sentencias",
+                                                                                                                                    "children": [
+                                                                                                                                        {
+                                                                                                                                            "value": "SentenciaIf",
+                                                                                                                                            "children": [
+                                                                                                                                                {
+                                                                                                                                                    "value": "==",
+                                                                                                                                                    "children": [
+                                                                                                                                                        {
+                                                                                                                                                            "value": "voto",
+                                                                                                                                                            "children": [],
+                                                                                                                                                            "line_no": "28",
+                                                                                                                                                            "type": "int",
+                                                                                                                                                            "identificator": true,
+                                                                                                                                                            "val": 0
+                                                                                                                                                        },
+                                                                                                                                                        {
+                                                                                                                                                            "value": "4",
+                                                                                                                                                            "children": [],
+                                                                                                                                                            "line_no": "28",
+                                                                                                                                                            "type": "int",
+                                                                                                                                                            "identificator": false,
+                                                                                                                                                            "val": 4
+                                                                                                                                                        }
+                                                                                                                                                    ],
+                                                                                                                                                    "line_no": "28",
+                                                                                                                                                    "type": "boolean",
+                                                                                                                                                    "identificator": false,
+                                                                                                                                                    "val": false
+                                                                                                                                                },
+                                                                                                                                                {
+                                                                                                                                                    "value": "Sentencias",
+                                                                                                                                                    "children": [
+                                                                                                                                                        {
+                                                                                                                                                            "value": "Bloque",
+                                                                                                                                                            "children": [
+                                                                                                                                                                {
+                                                                                                                                                                    "value": "Sentencias",
+                                                                                                                                                                    "children": [
+                                                                                                                                                                        {
+                                                                                                                                                                            "value": "Asignaci\u00f3n",
+                                                                                                                                                                            "children": [
+                                                                                                                                                                                {
+                                                                                                                                                                                    "value": "votoc4",
+                                                                                                                                                                                    "children": [],
+                                                                                                                                                                                    "line_no": "29",
+                                                                                                                                                                                    "type": "int",
+                                                                                                                                                                                    "identificator": true,
+                                                                                                                                                                                    "val": null
+                                                                                                                                                                                },
+                                                                                                                                                                                {
+                                                                                                                                                                                    "value": "+",
+                                                                                                                                                                                    "children": [
+                                                                                                                                                                                        {
+                                                                                                                                                                                            "value": "votoc4",
+                                                                                                                                                                                            "children": [],
+                                                                                                                                                                                            "line_no": "29",
+                                                                                                                                                                                            "type": "int",
+                                                                                                                                                                                            "identificator": true,
+                                                                                                                                                                                            "val": 0
+                                                                                                                                                                                        },
+                                                                                                                                                                                        {
+                                                                                                                                                                                            "value": "1",
+                                                                                                                                                                                            "children": [],
+                                                                                                                                                                                            "line_no": "29",
+                                                                                                                                                                                            "type": "int",
+                                                                                                                                                                                            "identificator": false,
+                                                                                                                                                                                            "val": 1
+                                                                                                                                                                                        }
+                                                                                                                                                                                    ],
+                                                                                                                                                                                    "line_no": "29",
+                                                                                                                                                                                    "type": "int",
+                                                                                                                                                                                    "identificator": false,
+                                                                                                                                                                                    "val": 1
+                                                                                                                                                                                }
+                                                                                                                                                                            ],
+                                                                                                                                                                            "line_no": "29",
+                                                                                                                                                                            "type": "int",
+                                                                                                                                                                            "identificator": false,
+                                                                                                                                                                            "val": 1
+                                                                                                                                                                        },
+                                                                                                                                                                        {
+                                                                                                                                                                            "value": "Asignaci\u00f3n",
+                                                                                                                                                                            "children": [
+                                                                                                                                                                                {
+                                                                                                                                                                                    "value": "totalvotos",
+                                                                                                                                                                                    "children": [],
+                                                                                                                                                                                    "line_no": "30",
+                                                                                                                                                                                    "type": "int",
+                                                                                                                                                                                    "identificator": true,
+                                                                                                                                                                                    "val": 3
+                                                                                                                                                                                },
+                                                                                                                                                                                {
+                                                                                                                                                                                    "value": "+",
+                                                                                                                                                                                    "children": [
+                                                                                                                                                                                        {
+                                                                                                                                                                                            "value": "totalvotos",
+                                                                                                                                                                                            "children": [],
+                                                                                                                                                                                            "line_no": "30",
+                                                                                                                                                                                            "type": "int",
+                                                                                                                                                                                            "identificator": true,
+                                                                                                                                                                                            "val": 3
+                                                                                                                                                                                        },
+                                                                                                                                                                                        {
+                                                                                                                                                                                            "value": "1",
+                                                                                                                                                                                            "children": [],
+                                                                                                                                                                                            "line_no": null,
+                                                                                                                                                                                            "type": "int",
+                                                                                                                                                                                            "identificator": false,
+                                                                                                                                                                                            "val": 1
+                                                                                                                                                                                        }
+                                                                                                                                                                                    ],
+                                                                                                                                                                                    "line_no": null,
+                                                                                                                                                                                    "type": "int",
+                                                                                                                                                                                    "identificator": false,
+                                                                                                                                                                                    "val": 4
+                                                                                                                                                                                }
+                                                                                                                                                                            ],
+                                                                                                                                                                            "line_no": "30",
+                                                                                                                                                                            "type": "int",
+                                                                                                                                                                            "identificator": false,
+                                                                                                                                                                            "val": 4
+                                                                                                                                                                        }
+                                                                                                                                                                    ],
+                                                                                                                                                                    "line_no": null,
+                                                                                                                                                                    "type": null,
+                                                                                                                                                                    "identificator": false,
+                                                                                                                                                                    "val": null
+                                                                                                                                                                }
+                                                                                                                                                            ],
+                                                                                                                                                            "line_no": "28",
+                                                                                                                                                            "type": null,
+                                                                                                                                                            "identificator": false,
+                                                                                                                                                            "val": null
+                                                                                                                                                        }
+                                                                                                                                                    ],
+                                                                                                                                                    "line_no": null,
+                                                                                                                                                    "type": null,
+                                                                                                                                                    "identificator": false,
+                                                                                                                                                    "val": null
+                                                                                                                                                },
+                                                                                                                                                {
+                                                                                                                                                    "value": "Sentencias",
+                                                                                                                                                    "children": [
+                                                                                                                                                        {
+                                                                                                                                                            "value": "Bloque",
+                                                                                                                                                            "children": [
+                                                                                                                                                                {
+                                                                                                                                                                    "value": "Sentencias",
+                                                                                                                                                                    "children": [],
+                                                                                                                                                                    "line_no": null,
+                                                                                                                                                                    "type": null,
+                                                                                                                                                                    "identificator": false,
+                                                                                                                                                                    "val": null
+                                                                                                                                                                }
+                                                                                                                                                            ],
+                                                                                                                                                            "line_no": "32",
+                                                                                                                                                            "type": null,
+                                                                                                                                                            "identificator": false,
+                                                                                                                                                            "val": null
+                                                                                                                                                        }
+                                                                                                                                                    ],
+                                                                                                                                                    "line_no": null,
+                                                                                                                                                    "type": null,
+                                                                                                                                                    "identificator": false,
+                                                                                                                                                    "val": null
+                                                                                                                                                }
+                                                                                                                                            ],
+                                                                                                                                            "line_no": "28",
+                                                                                                                                            "type": null,
+                                                                                                                                            "identificator": false,
+                                                                                                                                            "val": false
+                                                                                                                                        }
+                                                                                                                                    ],
+                                                                                                                                    "line_no": null,
+                                                                                                                                    "type": null,
+                                                                                                                                    "identificator": false,
+                                                                                                                                    "val": null
+                                                                                                                                }
+                                                                                                                            ],
+                                                                                                                            "line_no": "27",
+                                                                                                                            "type": null,
+                                                                                                                            "identificator": false,
+                                                                                                                            "val": null
+                                                                                                                        }
+                                                                                                                    ],
+                                                                                                                    "line_no": null,
+                                                                                                                    "type": null,
+                                                                                                                    "identificator": false,
+                                                                                                                    "val": null
+                                                                                                                }
+                                                                                                            ],
+                                                                                                            "line_no": "23",
+                                                                                                            "type": null,
+                                                                                                            "identificator": false,
+                                                                                                            "val": false
+                                                                                                        }
+                                                                                                    ],
+                                                                                                    "line_no": null,
+                                                                                                    "type": null,
+                                                                                                    "identificator": false,
+                                                                                                    "val": null
+                                                                                                }
+                                                                                            ],
+                                                                                            "line_no": "22",
+                                                                                            "type": null,
+                                                                                            "identificator": false,
+                                                                                            "val": null
+                                                                                        }
+                                                                                    ],
+                                                                                    "line_no": null,
+                                                                                    "type": null,
+                                                                                    "identificator": false,
+                                                                                    "val": null
+                                                                                }
+                                                                            ],
+                                                                            "line_no": "18",
+                                                                            "type": null,
+                                                                            "identificator": false,
+                                                                            "val": false
+                                                                        }
+                                                                    ],
+                                                                    "line_no": null,
+                                                                    "type": null,
+                                                                    "identificator": false,
+                                                                    "val": null
+                                                                }
+                                                            ],
+                                                            "line_no": "17",
+                                                            "type": null,
+                                                            "identificator": false,
+                                                            "val": null
+                                                        }
+                                                    ],
+                                                    "line_no": null,
+                                                    "type": null,
+                                                    "identificator": false,
+                                                    "val": null
+                                                }
+                                            ],
+                                            "line_no": "13",
+                                            "type": null,
+                                            "identificator": false,
+                                            "val": false
+                                        }
+                                    ],
+                                    "line_no": null,
+                                    "type": null,
+                                    "identificator": false,
+                                    "val": null
+                                }
+                            ],
+                            "line_no": "11",
+                            "type": null,
+                            "identificator": false,
+                            "val": null
+                        },
+                        {
+                            "value": "!=",
+                            "children": [
+                                {
+                                    "value": "voto",
+                                    "children": [],
+                                    "line_no": "38",
+                                    "type": "int",
+                                    "identificator": true,
+                                    "val": 0
+                                },
+                                {
+                                    "value": "0",
+                                    "children": [],
+                                    "line_no": "38",
+                                    "type": "int",
+                                    "identificator": false,
+                                    "val": 0
+                                }
+                            ],
+                            "line_no": "38",
+                            "type": "boolean",
+                            "identificator": false,
+                            "val": false
+                        }
+                    ],
+                    "line_no": null,
+                    "type": null,
+                    "identificator": false,
+                    "val": false
+                },
+                {
+                    "value": "Asignaci\u00f3n",
+                    "children": [
+                        {
+                            "value": "porcentaje1",
+                            "children": [],
+                            "line_no": "39",
+                            "type": "int",
+                            "identificator": true,
+                            "val": null
+                        },
+                        {
+                            "value": "*",
+                            "children": [
+                                {
+                                    "value": "/",
+                                    "children": [
+                                        {
+                                            "value": "votoc1",
+                                            "children": [],
+                                            "line_no": "39",
+                                            "type": "int",
+                                            "identificator": true,
+                                            "val": 1
+                                        },
+                                        {
+                                            "value": "totalvotos",
+                                            "children": [],
+                                            "line_no": "39",
+                                            "type": "int",
+                                            "identificator": true,
+                                            "val": 4
+                                        }
+                                    ],
+                                    "line_no": "39",
+                                    "type": "int",
+                                    "identificator": false,
+                                    "val": 0
+                                },
+                                {
+                                    "value": "100",
+                                    "children": [],
+                                    "line_no": "39",
+                                    "type": "int",
+                                    "identificator": false,
+                                    "val": 100
+                                }
+                            ],
+                            "line_no": "39",
+                            "type": "int",
+                            "identificator": false,
+                            "val": 0
+                        }
+                    ],
+                    "line_no": "39",
+                    "type": "int",
+                    "identificator": false,
+                    "val": 0
+                },
+                {
+                    "value": "Asignaci\u00f3n",
+                    "children": [
+                        {
+                            "value": "porcentaje2",
+                            "children": [],
+                            "line_no": "41",
+                            "type": "int",
+                            "identificator": true,
+                            "val": null
+                        },
+                        {
+                            "value": "*",
+                            "children": [
+                                {
+                                    "value": "/",
+                                    "children": [
+                                        {
+                                            "value": "votoc2",
+                                            "children": [],
+                                            "line_no": "41",
+                                            "type": "int",
+                                            "identificator": true,
+                                            "val": 1
+                                        },
+                                        {
+                                            "value": "totalvotos",
+                                            "children": [],
+                                            "line_no": "41",
+                                            "type": "int",
+                                            "identificator": true,
+                                            "val": 4
+                                        }
+                                    ],
+                                    "line_no": "41",
+                                    "type": "int",
+                                    "identificator": false,
+                                    "val": 0
+                                },
+                                {
+                                    "value": "100",
+                                    "children": [],
+                                    "line_no": "41",
+                                    "type": "int",
+                                    "identificator": false,
+                                    "val": 100
+                                }
+                            ],
+                            "line_no": "41",
+                            "type": "int",
+                            "identificator": false,
+                            "val": 0
+                        }
+                    ],
+                    "line_no": "41",
+                    "type": "int",
+                    "identificator": false,
+                    "val": 0
+                },
+                {
+                    "value": "Asignaci\u00f3n",
+                    "children": [
+                        {
+                            "value": "porcentaje3",
+                            "children": [],
+                            "line_no": "43",
+                            "type": "int",
+                            "identificator": true,
+                            "val": null
+                        },
+                        {
+                            "value": "*",
+                            "children": [
+                                {
+                                    "value": "/",
+                                    "children": [
+                                        {
+                                            "value": "votoc3",
+                                            "children": [],
+                                            "line_no": "43",
+                                            "type": "int",
+                                            "identificator": true,
+                                            "val": 1
+                                        },
+                                        {
+                                            "value": "totalvotos",
+                                            "children": [],
+                                            "line_no": "43",
+                                            "type": "int",
+                                            "identificator": true,
+                                            "val": 4
+                                        }
+                                    ],
+                                    "line_no": "43",
+                                    "type": "int",
+                                    "identificator": false,
+                                    "val": 0
+                                },
+                                {
+                                    "value": "100",
+                                    "children": [],
+                                    "line_no": "43",
+                                    "type": "int",
+                                    "identificator": false,
+                                    "val": 100
+                                }
+                            ],
+                            "line_no": "43",
+                            "type": "int",
+                            "identificator": false,
+                            "val": 0
+                        }
+                    ],
+                    "line_no": "43",
+                    "type": "int",
+                    "identificator": false,
+                    "val": 0
+                },
+                {
+                    "value": "Asignaci\u00f3n",
+                    "children": [
+                        {
+                            "value": "porcentaje4",
+                            "children": [],
+                            "line_no": "45",
+                            "type": "int",
+                            "identificator": true,
+                            "val": null
+                        },
+                        {
+                            "value": "*",
+                            "children": [
+                                {
+                                    "value": "/",
+                                    "children": [
+                                        {
+                                            "value": "votoc4",
+                                            "children": [],
+                                            "line_no": "45",
+                                            "type": "int",
+                                            "identificator": true,
+                                            "val": 1
+                                        },
+                                        {
+                                            "value": "totalvotos",
+                                            "children": [],
+                                            "line_no": "45",
+                                            "type": "int",
+                                            "identificator": true,
+                                            "val": 4
+                                        }
+                                    ],
+                                    "line_no": "45",
+                                    "type": "int",
+                                    "identificator": false,
+                                    "val": 0
+                                },
+                                {
+                                    "value": "100",
+                                    "children": [],
+                                    "line_no": "45",
+                                    "type": "int",
+                                    "identificator": false,
+                                    "val": 100
+                                }
+                            ],
+                            "line_no": "45",
+                            "type": "int",
+                            "identificator": false,
+                            "val": 0
+                        }
+                    ],
+                    "line_no": "45",
+                    "type": "int",
+                    "identificator": false,
+                    "val": 0
+                },
+                {
+                    "value": "SentenciaOutput",
+                    "children": [
+                        {
+                            "value": "porcentaje1",
+                            "children": [],
+                            "line_no": "47",
+                            "type": "int",
+                            "identificator": true,
+                            "val": 0
+                        }
+                    ],
+                    "line_no": "47",
+                    "type": null,
+                    "identificator": false,
+                    "val": 0
+                },
+                {
+                    "value": "SentenciaOutput",
+                    "children": [
+                        {
+                            "value": "porcentaje2",
+                            "children": [],
+                            "line_no": "48",
+                            "type": "int",
+                            "identificator": true,
+                            "val": 0
+                        }
+                    ],
+                    "line_no": "48",
+                    "type": null,
+                    "identificator": false,
+                    "val": 0
+                },
+                {
+                    "value": "SentenciaOutput",
+                    "children": [
+                        {
+                            "value": "porcentaje3",
+                            "children": [],
+                            "line_no": "49",
+                            "type": "int",
+                            "identificator": true,
+                            "val": 0
+                        }
+                    ],
+                    "line_no": "49",
+                    "type": null,
+                    "identificator": false,
+                    "val": 0
+                },
+                {
+                    "value": "SentenciaOutput",
+                    "children": [
+                        {
+                            "value": "porcentaje4",
+                            "children": [],
+                            "line_no": "50",
+                            "type": "int",
+                            "identificator": true,
+                            "val": 0
+                        }
+                    ],
+                    "line_no": "50",
+                    "type": null,
+                    "identificator": false,
+                    "val": 0
+                }
+            ],
+            "line_no": null,
+            "type": null,
+            "identificator": false,
+            "val": null
+        }
+    ],
+    "line_no": null,
+    "type": null,
+    "identificator": false,
+    "val": null
+}
