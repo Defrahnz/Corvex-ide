@@ -72,7 +72,8 @@ public class NumeroLinea extends JPanel implements CaretListener, DocumentListen
 		setFont( component.getFont() );
 
 		setBorderGap( 5 );
-		setCurrentLineForeground( Color.RED );
+		setCurrentLineForeground( Color.BLUE);
+                this.setBackground(Color.white);
 		setDigitAlignment( RIGHT );
 		setMinimumDisplayDigits( minimumDisplayDigits );
 
@@ -122,11 +123,11 @@ public class NumeroLinea extends JPanel implements CaretListener, DocumentListen
 	 */
 	public void setBorderGap(int borderGap)
 	{
-		this.borderGap = borderGap;
-		Border inner = new EmptyBorder(0, borderGap, 0, borderGap);
-		setBorder( new CompoundBorder(OUTER, inner) );
-		lastDigits = 0;
-		setPreferredWidth();
+            this.borderGap = borderGap;
+            Border inner = new EmptyBorder(0, borderGap, 0, borderGap);
+            setBorder(new CompoundBorder(OUTER, inner));
+            lastDigits = 0;
+            setPreferredWidth();
 	}
 
 	/**
@@ -204,24 +205,22 @@ public class NumeroLinea extends JPanel implements CaretListener, DocumentListen
 	private void setPreferredWidth()
 	{
 		Element root = component.getDocument().getDefaultRootElement();
-		int lines = root.getElementCount();
-		int digits = Math.max(String.valueOf(lines).length(), minimumDisplayDigits);
+                int lines = root.getElementCount();
+                int digits = Math.max(String.valueOf(lines).length(), minimumDisplayDigits);
 
 		//  Update sizes when number of digits in the line number changes
+                if (lastDigits != digits) {
+                    lastDigits = digits;
+                    FontMetrics fontMetrics = getFontMetrics(getFont());
+                    int width = fontMetrics.charWidth('0') * digits;
+                    Insets insets = getInsets();
+                    int preferredWidth = insets.left + insets.right + width;
 
-		if (lastDigits != digits)
-		{
-			lastDigits = digits;
-			FontMetrics fontMetrics = getFontMetrics( getFont() );
-			int width = fontMetrics.charWidth( '0' ) * digits;
-			Insets insets = getInsets();
-			int preferredWidth = insets.left + insets.right + width;
-
-			Dimension d = getPreferredSize();
-			d.setSize(preferredWidth, HEIGHT);
-			setPreferredSize( d );
-			setSize( d );
-		}
+                    Dimension d = getPreferredSize();
+                    d.setSize(preferredWidth, HEIGHT);
+                    setPreferredSize(d);
+                   setSize(d);
+                }
 	}
 
 	/**
