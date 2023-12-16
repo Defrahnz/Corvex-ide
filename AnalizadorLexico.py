@@ -10,7 +10,7 @@ parser.add_option(
     dest="file",
     default="test.txt",
     type="string",
-    help="specify a file to load.",
+    help="specify a file to load. Al menos se intentó records",
 )
 options, args = parser.parse_args()
 file = open(options.file, "r")

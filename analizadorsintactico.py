@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import json
 
 
 
@@ -8,6 +9,8 @@ class Token:
         self.value = value
         self.line_no = line_no
 errores_semantico = []
+with open("salida.txt", "w"):
+    pass
 
 class Node:
     def __init__(
@@ -15,6 +18,7 @@ class Node:
         value,
         line_no=None,
         children=None,
+        identificator=False
     ):
         self.value = value
         self.children = children or []
@@ -77,6 +81,8 @@ class Parser:
             "cin",
             "cout",
         ]:
+            if self.current_token and self.current_token.token_type == "id":
+                self.identificator = True
             root.add_child(self.stmt())
         while (
             self.current_token
@@ -158,6 +164,8 @@ class Parser:
                     operand_node = Node(
                         self.current_token.value, self.current_token.line_no
                     )
+                    if self.current_token and self.current_token.token_type == "id":
+                        operand_node.identificator = True
                     root.add_child(operand_node)
                     self.match(self.current_token.token_type)
             else:
@@ -288,7 +296,11 @@ class Parser:
             self.match(")")
         elif self.current_token and self.current_token.token_type in ["id", "num", "true", "false"]:
             root = Node(self.current_token.value, self.current_token.line_no)
+            if self.current_token and self.current_token.token_type == "id":
+                root.identificator = True
             self.match(self.current_token.token_type)
+
+
         else:
             root = Node("Error")
             error_token = self.current_token.value if self.current_token else None
@@ -314,6 +326,8 @@ class Parser:
                 operand_node = Node(
                     self.current_token.value, self.current_token.line_no
                 )
+                if self.current_token and self.current_token.token_type == "id":
+                    operand_node.identificator = True
                 root.add_child(operand_node)
                 self.match(self.current_token.token_type)
         return root
@@ -353,9 +367,7 @@ for line in lines:
         line_no = token_parts[2].strip()
         token = Token(token_type, value, line_no)
         token_list.append(token)
-# # Imprimir la lista de objetos Token
-# for tok in token_list:
-#    print (tok.token_type, tok.value, tok.line_no)
+
 
 
 parser = Parser(token_list)
@@ -525,7 +537,7 @@ class SymbolTable:
                 var_name = node.value
                 var_info = self.lookup(var_name)
                 if(var_info != None):
-                    print(f"AAAAA {node.value}, {node.line_no}")
+                   
                     symbol_table.insertLine(node.value, node.line_no)
                     if var_info[1] == "int":
                         node.val = var_info[0]
@@ -541,7 +553,9 @@ class SymbolTable:
                         return var_info[0]
                     else:
                         errores_semantico.append(f"Type error at line {node.line_no}")
+                        #aqui
                 else: 
+                    errores_semantico.append(f"Error linea {node.line_no}: La variable '{var_name}' no se declaró antes de usarse.")
                     return
     def is_float(self, value):
         try:
@@ -626,6 +640,7 @@ def semantic_analysis(node, symbol_table):
             if(node.children[1].type != node.children[0].type):
                 print(f"Error linea {node.line_no}: tipo erroneo")
                 errores_semantico.append(f"Error linea {node.line_no}: tipo erroneo")
+                symbol_table.insertLine(node.children[0].value, node.line_no)
             #TODO: SOLO SE ASIGNA Y SE GUARDA EN MEMORIA SI ES CORRECTO EL TIPADO, DLC, NO SE ACTUALIZA VARIABLE
             else: 
                 node.val = var_value
@@ -653,15 +668,19 @@ def semantic_analysis(node, symbol_table):
             var_value = symbol_table.evaluate_expression(node.children[-1])
             node.val = var_value
     if node.value == "SentenciaOutput":
+            
             var_value = symbol_table.evaluate_expression(node.children[0])
+    
             node.val = var_value
     if node.value == "SentenciaInput":
-            print("Entra cin",node.line_no)
-            
-    # if node.value == "sentenciaInput":
-    #         print(node.line_no,node.val)
-    # if node.value == "SentenciaInput":
-    #         symbol_table.insertLine(node.value, node.line_no)
+             #se escribe en indentificador, debemos de buscar en tabla hash primero
+             #aqui
+            var_name = node.children[0].children[0].value
+            symbol_info = symbol_table.lookup(var_name)
+            if(symbol_info != None):
+                symbol_table.insertLine(var_name, node.line_no)
+            else:
+                errores_semantico.append(f"Error linea {node.line_no}: La variable '{var_name}' no se declaró antes de usarse.")
 
 
 root_node = ast
@@ -669,7 +688,27 @@ root_node = ast
 symbol_table = SymbolTable()
 semantic_analysis(root_node, symbol_table)
 
+def serialize_node(node):
+    node_dict = {
+        'value': node.value,
+        'children': [serialize_node(child) for child in node.children],
+	    'line_no': node.line_no,
+	    'type': node.type,
+	    'identificator': node.identificator,
+	    'val': node.val
+	}
+    return node_dict
+
+serialized_tree = serialize_node(root_node)
+	
+with open('arbol_sintactico.json', 'w') as file:
+    json.dump(serialized_tree, file, indent=4)
+
 print_ast(ast)
+f.close()
+if errores_semantico:
+    for error in errores_semantico:
+        pass
 f.close()
 # Imprimir arbol con anotaciones a txt
 f = open("ArbolAnotaciones.txt", "w", encoding="utf-8")
